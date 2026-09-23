@@ -1,0 +1,1868 @@
+{
+ "_note": "本 skill 自有的**形态增补**（不是从归档 gt_data 搬来的）。",
+ "_why": [
+  "data/archetypes.json 由 tools/migrate_from_archive.py 的 DATA 表**无条件覆盖**",
+  "（shutil.copy2，源 = 归档 scripts/gt_data/archetypes.json）⇒ 直接改它会在",
+  "下一次迁移时静默丢失。故增补一律写在本文件，由迁移步骤 23.5 合并进 archetypes.json。",
+  "合并是**幂等**的：键已存在就不动（不覆盖手工调整），只补缺失键。",
+  "★ 2026-09-22 新增 necro_berserker / wolf_necromancer / raven_necromancer（死灵 class08 + 狂战士 class10 的三种形态）。动因：用户要「75 级 亡灵狂战士、不参考存档、从 0 构建」，而 {8,10} 此前在形态表里完全不存在（带 8 的只有 necro_inquisitor(8,7)，带 10 的全是 (10,4)）⇒ pick_archetype 只能按重叠度乱猜。",
+  "  三形态的 core_skills 按既有形态的同一口径**机械派生**（主职业全树 + 副职业武器池/被动，不含宠物与 transmuter）；damage_weights **故意不写** ⇒ 走默认权重、不预设伤害方向。⚠ 待人工校准：core_skills 是机械并集，masteries 上限（主 50 / 副 32）照先例填。",
+  "★ 2026-09-22 把两处**只写在 archetypes.json 里**的手工修复登记进本增补文件（否则一旦跑 merge/迁移就被回退，实测踩到）：① `avalanche.core_skills` 补 `playerclass10/wpattack01`（血牙）+ `playerclass04/wpattack3`（死亡旋风）—— 2026-09-20 的原修复，B 口径 68,149 → 79,318（+16.4%），护栏 `alloc.reachable_wps()`；② `raven_nightblade.form = \"wereraven\"`（陷阱 #78「每个形态都要声明 form」时漏登记）。",
+  "★ 2026-09-22 新增 `tools/make_archetypes.py`：**机械派生**同职业组合的 3 个形态（`b<主>c<副>_human|wolf|raven`），口径 = 主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写。用途：「某职业 + 全部职业谁伤害最高」这类横向普查（手写 27 条不可行）。⚠ 未人工校准，只用于同口径比较。"
+ ],
+ "archetypes": {
+  "avalanche": {
+   "label": "狂战士(人形态)·雪崩 · 冰冷转穿刺",
+   "desc": "人形态、不点变形。核心是「雪崩」(wpattack02) —— ★ 它**不是默认攻击，而是武器池技能(WPS)**：skillChanceWeight 12→30（全场最高一档，与「血牙」并列），在默认攻击（猛袭，class10 唯一带武器伤害的默认攻击）每次挥击时按权重参与判定。原生伤害 cold+pierce 对称，靠装备**全局转化**把冰冷并进穿刺（莫克之牙 45% / 刻罪者 45% / 神选者肩饰 30%）。★ 由 2026-09-20 用户需求新增。",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     4,
+     32
+    ]
+   ],
+   "form": "human",
+   "primary_skill": "records/skills/playerclass10/wpattack02.dbr",
+   "root_skills": [
+    "records/skills/playerclass10/wpattack02.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass04/wpattack0.dbr",
+    "records/skills/playerclass04/wpattack1.dbr",
+    "records/skills/playerclass04/wpattack2.dbr",
+    "records/skills/playerclass04/wpattack5.dbr",
+    "records/skills/playerclass04/phantomblade.dbr",
+    "records/skills/playerclass04/veilofshadows1.dbr",
+    "records/skills/playerclass04/veilofshadows2.dbr",
+    "records/skills/playerclass04/nightbladeenchant1.dbr",
+    "records/skills/playerclass04/passive1.dbr",
+    "records/skills/playerclass04/passive2.dbr",
+    "records/skills/playerclass04/passive3.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass04/wpattack3.dbr"
+   ],
+   "damage_weights": {
+    "phys": 0.15,
+    "pierce": 1.6,
+    "bleed": 0.35,
+    "total": 1.4,
+    "OA": 0.4,
+    "spd": 1.5,
+    "crit": 1.0,
+    "fpie": 1.0,
+    "fbleed": 0.35,
+    "life": 0.0,
+    "armor": 0.0
+   },
+   "field_aliases": {
+    "bleed": "offensiveColdModifier",
+    "fbleed": "offensiveColdMin"
+   },
+   "attribute_bias": {
+    "physique": 0.4,
+    "cunning": 0.6,
+    "spirit": 0.0
+   }
+  },
+  "raven_nightblade": {
+   "label": "狂战士(鸦人)+夜刃 · 冰冷穿刺",
+   "desc": "鸦人形态（寒冰之爪/霜暴，冰冷直伤 + 穿刺）+ 夜刃武器池",
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass04/wpattack0.dbr",
+    "records/skills/playerclass04/wpattack1.dbr",
+    "records/skills/playerclass04/wpattack2.dbr",
+    "records/skills/playerclass04/wpattack3.dbr",
+    "records/skills/playerclass04/wpattack5.dbr",
+    "records/skills/playerclass04/nightbladeenchant1.dbr",
+    "records/skills/playerclass04/veilofshadows1.dbr",
+    "records/skills/playerclass04/veilofshadows2.dbr",
+    "records/skills/playerclass04/passive1.dbr",
+    "records/skills/playerclass04/passive3.dbr"
+   ],
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     4,
+     32
+    ]
+   ],
+   "damage_weights": {
+    "phys": 1.6,
+    "pierce": 1.2,
+    "bleed": 1.0,
+    "total": 1.35,
+    "OA": 0.35,
+    "spd": 1.4,
+    "crit": 1.0,
+    "fpie": 1.0,
+    "life": 0.0,
+    "armor": 0.0
+   },
+   "field_aliases": {
+    "phys": "offensiveColdModifier",
+    "flat": "offensiveColdMin",
+    "fpie": "offensiveColdMin",
+    "fbleed": "offensiveSlowColdMin"
+   },
+   "projectile_hits": 8,
+   "attribute_bias": {
+    "physique": 0.35,
+    "cunning": 0.35,
+    "spirit": 0.3
+   },
+   "form": "wereraven"
+  },
+  "necro_berserker": {
+   "label": "死灵+狂战士 · 人形态（不点变形）",
+   "desc": "不点变形的死灵+狂战士。★ 之所以把人形态作为默认：变身会**整体替换技能栏**（陷阱 #78），死灵的武器池技能（收割打击 weaponpool01 / 死灵刀锋 weaponpool02）会被剔除，两职业的协同点就没了。人形态下两边技能都在。★ core_skills 由 DB 机械派生（主职业全树 + 副职业武器池/被动，不含宠物与 transmuter），damage_weights 故意不写 ⇒ 走默认权重，不预设伤害方向。",
+   "form": "human",
+   "mastery": "class08",
+   "masteries": [
+    [
+     8,
+     50
+    ],
+    [
+     10,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/soulscythe3.dbr",
+    "records/skills/playerclass08/ravenousearth1.dbr",
+    "records/skills/playerclass08/lifetap3.dbr",
+    "records/skills/playerclass08/lifetap2.dbr",
+    "records/skills/playerclass08/callofthegrave.dbr",
+    "records/skills/playerclass08/illomen1.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/ravenousearth2.dbr",
+    "records/skills/playerclass08/ravenousearth3.dbr",
+    "records/skills/playerclass08/reapspirit1.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/soulscythe2.dbr",
+    "records/skills/playerclass08/soulsiphon1.dbr",
+    "records/skills/playerclass08/soulsiphon2.dbr",
+    "records/skills/playerclass08/soultransfer.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/spectralarmor2.dbr",
+    "records/skills/playerclass08/summon_skeleton2.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr",
+    "records/skills/playerclass08/lifetap1.dbr",
+    "records/skills/playerclass08/soulscythe1.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/passive03.dbr"
+   ]
+  },
+  "wolf_necromancer": {
+   "label": "死灵+狂战士 · 狼人形态（穿刺流血）",
+   "desc": "狼人形态。形态替换技能栏 ⇒ 只吃 werewolf1 授予的野性利爪/狂乱撕扯 + 星座 proc，死灵侧只留被动/常驻光环。core_skills 机械派生，damage_weights 不写（走默认）。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     8,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr",
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/spectralarmor2.dbr"
+   ]
+  },
+  "raven_necromancer": {
+   "label": "死灵+狂战士 · 鸦人形态（冰冷）",
+   "desc": "鸦人形态，主输出走寒冰之爪/霜暴/永冬。同样受形态门控，死灵侧只留被动。core_skills 机械派生，damage_weights 不写（走默认）。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     8,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr",
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/spectralarmor2.dbr"
+   ]
+  },
+  "b10c01_human": {
+   "label": "狂战士 + 士兵 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     1,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass01/fieldcommand1buff.dbr",
+    "records/skills/playerclass01/passive4.dbr",
+    "records/skills/playerclass01/passive3.dbr",
+    "records/skills/playerclass01/cadence1.dbr",
+    "records/skills/playerclass01/passive1.dbr",
+    "records/skills/playerclass01/weaponpool1.dbr",
+    "records/skills/playerclass01/fightingspirit1.dbr",
+    "records/skills/playerclass01/passive2.dbr",
+    "records/skills/playerclass01/passiveshield.dbr",
+    "records/skills/playerclass01/stancedefensive.dbr",
+    "records/skills/playerclass01/stanceoffensive.dbr",
+    "records/skills/playerclass01/weaponpool2.dbr",
+    "records/skills/playerclass01/willtolive1.dbr"
+   ]
+  },
+  "b10c01_wolf": {
+   "label": "狂战士 + 士兵 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     1,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass01/fieldcommand1buff.dbr",
+    "records/skills/playerclass01/passive4.dbr",
+    "records/skills/playerclass01/passive3.dbr",
+    "records/skills/playerclass01/cadence1.dbr",
+    "records/skills/playerclass01/passive1.dbr",
+    "records/skills/playerclass01/weaponpool1.dbr",
+    "records/skills/playerclass01/fightingspirit1.dbr",
+    "records/skills/playerclass01/passive2.dbr",
+    "records/skills/playerclass01/passiveshield.dbr",
+    "records/skills/playerclass01/stancedefensive.dbr",
+    "records/skills/playerclass01/stanceoffensive.dbr",
+    "records/skills/playerclass01/weaponpool2.dbr",
+    "records/skills/playerclass01/willtolive1.dbr"
+   ]
+  },
+  "b10c01_raven": {
+   "label": "狂战士 + 士兵 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     1,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass01/fieldcommand1buff.dbr",
+    "records/skills/playerclass01/passive4.dbr",
+    "records/skills/playerclass01/passive3.dbr",
+    "records/skills/playerclass01/cadence1.dbr",
+    "records/skills/playerclass01/passive1.dbr",
+    "records/skills/playerclass01/weaponpool1.dbr",
+    "records/skills/playerclass01/fightingspirit1.dbr",
+    "records/skills/playerclass01/passive2.dbr",
+    "records/skills/playerclass01/passiveshield.dbr",
+    "records/skills/playerclass01/stancedefensive.dbr",
+    "records/skills/playerclass01/stanceoffensive.dbr",
+    "records/skills/playerclass01/weaponpool2.dbr",
+    "records/skills/playerclass01/willtolive1.dbr"
+   ]
+  },
+  "b10c02_human": {
+   "label": "狂战士 + 爆破者 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     2,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass02/blastshield1.dbr",
+    "records/skills/playerclass02/flamestrike1.dbr",
+    "records/skills/playerclass02/passive1.dbr",
+    "records/skills/playerclass02/pets/thermitemine_skill_flare1.dbr"
+   ]
+  },
+  "b10c02_wolf": {
+   "label": "狂战士 + 爆破者 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     2,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass02/blastshield1.dbr",
+    "records/skills/playerclass02/flamestrike1.dbr",
+    "records/skills/playerclass02/passive1.dbr",
+    "records/skills/playerclass02/pets/thermitemine_skill_flare1.dbr"
+   ]
+  },
+  "b10c02_raven": {
+   "label": "狂战士 + 爆破者 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     2,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass02/blastshield1.dbr",
+    "records/skills/playerclass02/flamestrike1.dbr",
+    "records/skills/playerclass02/passive1.dbr",
+    "records/skills/playerclass02/pets/thermitemine_skill_flare1.dbr"
+   ]
+  },
+  "b10c03_human": {
+   "label": "狂战士 + 神秘学者 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     3,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass03/bondsofbysmiel1.dbr",
+    "records/skills/playerclass03/possession1.dbr",
+    "records/skills/playerclass03/witchfire1.dbr"
+   ]
+  },
+  "b10c03_wolf": {
+   "label": "狂战士 + 神秘学者 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     3,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass03/bondsofbysmiel1.dbr",
+    "records/skills/playerclass03/possession1.dbr",
+    "records/skills/playerclass03/witchfire1.dbr"
+   ]
+  },
+  "b10c03_raven": {
+   "label": "狂战士 + 神秘学者 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     3,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass03/bondsofbysmiel1.dbr",
+    "records/skills/playerclass03/possession1.dbr",
+    "records/skills/playerclass03/witchfire1.dbr"
+   ]
+  },
+  "b10c04_human": {
+   "label": "狂战士 + 夜刃 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     4,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass04/wpattack0.dbr",
+    "records/skills/playerclass04/wpattack2.dbr",
+    "records/skills/playerclass04/passive3.dbr",
+    "records/skills/playerclass04/passive1.dbr",
+    "records/skills/playerclass04/passive2.dbr",
+    "records/skills/playerclass04/veilofshadows1.dbr",
+    "records/skills/playerclass04/wpattack1.dbr",
+    "records/skills/playerclass04/wpattack3.dbr",
+    "records/skills/playerclass04/wpattack5.dbr"
+   ]
+  },
+  "b10c04_wolf": {
+   "label": "狂战士 + 夜刃 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     4,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass04/wpattack0.dbr",
+    "records/skills/playerclass04/wpattack2.dbr",
+    "records/skills/playerclass04/passive3.dbr",
+    "records/skills/playerclass04/passive1.dbr",
+    "records/skills/playerclass04/passive2.dbr",
+    "records/skills/playerclass04/veilofshadows1.dbr",
+    "records/skills/playerclass04/wpattack1.dbr",
+    "records/skills/playerclass04/wpattack3.dbr",
+    "records/skills/playerclass04/wpattack5.dbr"
+   ]
+  },
+  "b10c04_raven": {
+   "label": "狂战士 + 夜刃 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     4,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass04/wpattack0.dbr",
+    "records/skills/playerclass04/wpattack2.dbr",
+    "records/skills/playerclass04/passive3.dbr",
+    "records/skills/playerclass04/passive1.dbr",
+    "records/skills/playerclass04/passive2.dbr",
+    "records/skills/playerclass04/veilofshadows1.dbr",
+    "records/skills/playerclass04/wpattack1.dbr",
+    "records/skills/playerclass04/wpattack3.dbr",
+    "records/skills/playerclass04/wpattack5.dbr"
+   ]
+  },
+  "b10c05_human": {
+   "label": "狂战士 + 奥术 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     5,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass05/elementalinfusion1.dbr",
+    "records/skills/playerclass05/mindovermatter2.dbr",
+    "records/skills/playerclass05/mindovermatter1.dbr",
+    "records/skills/playerclass05/passive01.dbr",
+    "records/skills/playerclass05/passive02.dbr",
+    "records/skills/playerclass05/passive03.dbr",
+    "records/skills/playerclass05/passive04.dbr",
+    "records/skills/playerclass05/sphereofprotection1.dbr"
+   ]
+  },
+  "b10c05_wolf": {
+   "label": "狂战士 + 奥术 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     5,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass05/elementalinfusion1.dbr",
+    "records/skills/playerclass05/mindovermatter2.dbr",
+    "records/skills/playerclass05/mindovermatter1.dbr",
+    "records/skills/playerclass05/passive01.dbr",
+    "records/skills/playerclass05/passive02.dbr",
+    "records/skills/playerclass05/passive03.dbr",
+    "records/skills/playerclass05/passive04.dbr",
+    "records/skills/playerclass05/sphereofprotection1.dbr"
+   ]
+  },
+  "b10c05_raven": {
+   "label": "狂战士 + 奥术 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     5,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass05/elementalinfusion1.dbr",
+    "records/skills/playerclass05/mindovermatter2.dbr",
+    "records/skills/playerclass05/mindovermatter1.dbr",
+    "records/skills/playerclass05/passive01.dbr",
+    "records/skills/playerclass05/passive02.dbr",
+    "records/skills/playerclass05/passive03.dbr",
+    "records/skills/playerclass05/passive04.dbr",
+    "records/skills/playerclass05/sphereofprotection1.dbr"
+   ]
+  },
+  "b10c06_human": {
+   "label": "狂战士 + 萨满 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     6,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass06/natureblessing1.dbr",
+    "records/skills/playerclass06/passive01.dbr",
+    "records/skills/playerclass06/primalbond01.dbr",
+    "records/skills/playerclass06/savagery1.dbr",
+    "records/skills/playerclass06/stormcaller1.dbr",
+    "records/skills/playerclass06/weaponpool01.dbr",
+    "records/skills/playerclass06/weaponpool02.dbr"
+   ]
+  },
+  "b10c06_wolf": {
+   "label": "狂战士 + 萨满 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     6,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass06/natureblessing1.dbr",
+    "records/skills/playerclass06/passive01.dbr",
+    "records/skills/playerclass06/primalbond01.dbr",
+    "records/skills/playerclass06/savagery1.dbr",
+    "records/skills/playerclass06/stormcaller1.dbr",
+    "records/skills/playerclass06/weaponpool01.dbr",
+    "records/skills/playerclass06/weaponpool02.dbr"
+   ]
+  },
+  "b10c06_raven": {
+   "label": "狂战士 + 萨满 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     6,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass06/natureblessing1.dbr",
+    "records/skills/playerclass06/passive01.dbr",
+    "records/skills/playerclass06/primalbond01.dbr",
+    "records/skills/playerclass06/savagery1.dbr",
+    "records/skills/playerclass06/stormcaller1.dbr",
+    "records/skills/playerclass06/weaponpool01.dbr",
+    "records/skills/playerclass06/weaponpool02.dbr"
+   ]
+  },
+  "b10c07_human": {
+   "label": "狂战士 + 审判官 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     7,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass07/auraconviction1.dbr",
+    "records/skills/playerclass07/auracensure1.dbr",
+    "records/skills/playerclass07/passive01.dbr",
+    "records/skills/playerclass07/passive02.dbr",
+    "records/skills/playerclass07/wpattack01.dbr",
+    "records/skills/playerclass07/wpattack02.dbr",
+    "records/skills/playerclass07/wpattack03.dbr"
+   ]
+  },
+  "b10c07_wolf": {
+   "label": "狂战士 + 审判官 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     7,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass07/auraconviction1.dbr",
+    "records/skills/playerclass07/auracensure1.dbr",
+    "records/skills/playerclass07/passive01.dbr",
+    "records/skills/playerclass07/passive02.dbr",
+    "records/skills/playerclass07/wpattack01.dbr",
+    "records/skills/playerclass07/wpattack02.dbr",
+    "records/skills/playerclass07/wpattack03.dbr"
+   ]
+  },
+  "b10c07_raven": {
+   "label": "狂战士 + 审判官 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     7,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass07/auraconviction1.dbr",
+    "records/skills/playerclass07/auracensure1.dbr",
+    "records/skills/playerclass07/passive01.dbr",
+    "records/skills/playerclass07/passive02.dbr",
+    "records/skills/playerclass07/wpattack01.dbr",
+    "records/skills/playerclass07/wpattack02.dbr",
+    "records/skills/playerclass07/wpattack03.dbr"
+   ]
+  },
+  "b10c08_human": {
+   "label": "狂战士 + 死灵法师 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     8,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr"
+   ]
+  },
+  "b10c08_wolf": {
+   "label": "狂战士 + 死灵法师 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     8,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr"
+   ]
+  },
+  "b10c08_raven": {
+   "label": "狂战士 + 死灵法师 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     8,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass08/weaponpool02.dbr",
+    "records/skills/playerclass08/masterofdeath1.dbr",
+    "records/skills/playerclass08/reaper1.dbr",
+    "records/skills/playerclass08/spectralarmor1.dbr",
+    "records/skills/playerclass08/weaponpool01.dbr"
+   ]
+  },
+  "b10c09_human": {
+   "label": "狂战士 + 守誓者 · 人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "human",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     9,
+     32
+    ]
+   ],
+   "root_skills": [],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass09/passive02.dbr",
+    "records/skills/playerclass09/divinemandate1.dbr",
+    "records/skills/playerclass09/pathofthethree1.dbr",
+    "records/skills/playerclass09/passive01.dbr",
+    "records/skills/playerclass09/presenceofvirtue1.dbr",
+    "records/skills/playerclass09/righteousfervor1.dbr",
+    "records/skills/playerclass09/wpattack01.dbr",
+    "records/skills/playerclass09/wpattack02.dbr"
+   ]
+  },
+  "b10c09_wolf": {
+   "label": "狂战士 + 守誓者 · 狼人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "werewolf",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     9,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/werewolf1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass09/passive02.dbr",
+    "records/skills/playerclass09/divinemandate1.dbr",
+    "records/skills/playerclass09/pathofthethree1.dbr",
+    "records/skills/playerclass09/passive01.dbr",
+    "records/skills/playerclass09/presenceofvirtue1.dbr",
+    "records/skills/playerclass09/righteousfervor1.dbr",
+    "records/skills/playerclass09/wpattack01.dbr",
+    "records/skills/playerclass09/wpattack02.dbr"
+   ]
+  },
+  "b10c09_raven": {
+   "label": "狂战士 + 守誓者 · 鸦人形态",
+   "desc": "★ **机械派生**（`tools/make_archetypes.py`）。主职业全树 + 副职业支援技（武器池 + 被动/光环），`damage_weights` 不写 ⇒ 默认权重、不预设伤害方向。⚠ 未人工校准：只用于同口径横向普查，别当最终结论。",
+   "form": "wereraven",
+   "mastery": "class10",
+   "masteries": [
+    [
+     10,
+     50
+    ],
+    [
+     9,
+     32
+    ]
+   ],
+   "root_skills": [
+    "records/skills/playerclass10/wereraven1.dbr"
+   ],
+   "core_skills": [
+    "records/skills/playerclass10/wpattack02.dbr",
+    "records/skills/playerclass10/leap2.dbr",
+    "records/skills/playerclass10/wereraven1_skill01_icicles.dbr",
+    "records/skills/playerclass10/werewolf1.dbr",
+    "records/skills/playerclass10/werewolf3.dbr",
+    "records/skills/playerclass10/bonechillingcry1.dbr",
+    "records/skills/playerclass10/rallyingcry2.dbr",
+    "records/skills/playerclass10/leap1.dbr",
+    "records/skills/playerclass10/rallyingcry1.dbr",
+    "records/skills/playerclass10/windsofasterkarn2.dbr",
+    "records/skills/playerclass10/onslaught1.dbr",
+    "records/skills/playerclass10/werewolf1_skill01_claws.dbr",
+    "records/skills/playerclass10/onslaught3.dbr",
+    "records/skills/playerclass10/bloodborne1.dbr",
+    "records/skills/playerclass10/passive04.dbr",
+    "records/skills/playerclass10/amatokpact3.dbr",
+    "records/skills/playerclass10/wereraven3.dbr",
+    "records/skills/playerclass10/amatokpact1.dbr",
+    "records/skills/playerclass10/amatokpact2.dbr",
+    "records/skills/playerclass10/heartofastekarn1.dbr",
+    "records/skills/playerclass10/passive03.dbr",
+    "records/skills/playerclass10/windsofasterkarn1.dbr",
+    "records/skills/playerclass10/passive02.dbr",
+    "records/skills/playerclass10/onslaught2.dbr",
+    "records/skills/playerclass10/passive01.dbr",
+    "records/skills/playerclass10/wpattack01.dbr",
+    "records/skills/playerclass10/wereraven2.dbr",
+    "records/skills/playerclass10/werewolf2.dbr",
+    "records/skills/playerclass10/wereraven1.dbr",
+    "records/skills/playerclass10/werewolf1_skill02_charge.dbr",
+    "records/skills/playerclass10/wereraven1_skill02_icering.dbr",
+    "records/skills/playerclass09/passive02.dbr",
+    "records/skills/playerclass09/divinemandate1.dbr",
+    "records/skills/playerclass09/pathofthethree1.dbr",
+    "records/skills/playerclass09/passive01.dbr",
+    "records/skills/playerclass09/presenceofvirtue1.dbr",
+    "records/skills/playerclass09/righteousfervor1.dbr",
+    "records/skills/playerclass09/wpattack01.dbr",
+    "records/skills/playerclass09/wpattack02.dbr"
+   ]
+  }
+ }
+}

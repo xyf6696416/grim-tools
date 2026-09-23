@@ -1,0 +1,3586 @@
+{
+"110": {
+"tag": "tagGDX2Devotion_C203",
+"icon": "tier3-021",
+"star_prefix": "tier3_21",
+"affinity": [
+[
+"Eldritch",
+20
+],
+[
+"Chaos",
+7
+]
+],
+"stars": [
+"sk2603",
+"sk2604",
+"sk2602",
+"sk2607",
+"sk2605",
+"sk2606"
+],
+"links": [
+1,
+2,
+3,
+3,
+5
+],
+"given": []
+},
+"74": {
+"tag": "tagDevotion_C09",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+20
+],
+[
+"Order",
+7
+]
+],
+"stars": [
+"sk1084",
+"sk1085",
+"sk1083",
+"sk1088",
+"sk1086",
+"sk1087"
+],
+"links": [
+1,
+2,
+2,
+4,
+4
+],
+"given": []
+},
+"75": {
+"tag": "tagDevotion_C10",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+15
+],
+[
+"Eldritch",
+12
+]
+],
+"stars": [
+"sk1090",
+"sk1091",
+"sk1089",
+"sk1094",
+"sk1092",
+"sk1093"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"72": {
+"tag": "tagDevotion_C07",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+8
+],
+[
+"Eldritch",
+15
+]
+],
+"stars": [
+"sk1070",
+"sk1071",
+"sk1069",
+"sk1074",
+"sk1075",
+"sk1072",
+"sk1073"
+],
+"links": [
+1,
+6,
+2,
+3,
+4,
+3
+],
+"given": []
+},
+"73": {
+"tag": "tagDevotion_C08",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+8
+],
+[
+"Primordial",
+15
+]
+],
+"stars": [
+"sk1077",
+"sk1078",
+"sk1076",
+"sk1081",
+"sk1082",
+"sk1079",
+"sk1080"
+],
+"links": [
+1,
+5,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"78": {
+"tag": "tagDevotion_C13",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+15
+],
+[
+"Order",
+8
+]
+],
+"stars": [
+"sk1110",
+"sk1111",
+"sk1109",
+"sk1114",
+"sk1115",
+"sk1112",
+"sk1113"
+],
+"links": [
+1,
+6,
+2,
+2,
+4,
+5
+],
+"given": []
+},
+"79": {
+"tag": "tagDevotion_B31",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+3
+],
+[
+"Primordial",
+5
+]
+],
+"stars": [
+"sk1023",
+"sk1024",
+"sk1022",
+"sk1027",
+"sk1025",
+"sk1026"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Ascendant",
+3
+]
+]
+},
+"76": {
+"tag": "tagDevotion_C11",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+10
+],
+[
+"Eldritch",
+18
+]
+],
+"stars": [
+"sk1096",
+"sk1097",
+"sk1095",
+"sk1100",
+"sk1101",
+"sk1098",
+"sk1099"
+],
+"links": [
+1,
+6,
+2,
+3,
+3,
+3
+],
+"given": []
+},
+"77": {
+"tag": "tagDevotion_C12",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+13
+],
+[
+"Ascendant",
+13
+]
+],
+"stars": [
+"sk1103",
+"sk1104",
+"sk1102",
+"sk1107",
+"sk1108",
+"sk1105",
+"sk1106"
+],
+"links": [
+1,
+4,
+2,
+3,
+4,
+4
+],
+"given": []
+},
+"81": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [
+"sk741"
+],
+"links": [],
+"given": [
+[
+"Order",
+1
+]
+]
+},
+"82": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [
+"sk742"
+],
+"links": [],
+"given": [
+[
+"Eldritch",
+1
+]
+]
+},
+"80": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [
+"sk740"
+],
+"links": [],
+"given": [
+[
+"Chaos",
+1
+]
+]
+},
+"85": {
+"tag": "tagDevotion_A37",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk836",
+"sk837",
+"sk835"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Order",
+3
+]
+]
+},
+"86": {
+"tag": "tagDevotion_A38",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk839",
+"sk840",
+"sk838"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Chaos",
+3
+]
+]
+},
+"83": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [
+"sk743"
+],
+"links": [],
+"given": [
+[
+"Ascendant",
+1
+]
+]
+},
+"84": {
+"tag": "tagDevotion_A36",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk833",
+"sk834",
+"sk832"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Eldritch",
+4
+]
+]
+},
+"3": {
+"tag": "tagDevotion_A03",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk689",
+"sk690",
+"sk688",
+"sk691"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Eldritch",
+5
+]
+]
+},
+"89": {
+"tag": "tagGDX1Devotion_A102",
+"icon": "tier1-040",
+"star_prefix": "tier1_40",
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk2021",
+"sk2022",
+"sk2020",
+"sk2023"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Chaos",
+2
+],
+[
+"Primordial",
+3
+]
+]
+},
+"4": {
+"tag": "tagDevotion_A04",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk693",
+"sk694",
+"sk692"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Ascendant",
+4
+]
+]
+},
+"1": {
+"tag": "tagDevotion_A01",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk679",
+"sk680",
+"sk678",
+"sk681",
+"sk682"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Chaos",
+2
+],
+[
+"Eldritch",
+3
+]
+]
+},
+"87": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [],
+"links": [],
+"given": []
+},
+"2": {
+"tag": "tagDevotion_A02",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk684",
+"sk685",
+"sk683",
+"sk686",
+"sk687"
+],
+"links": [
+1,
+2,
+3,
+3
+],
+"given": [
+[
+"Eldritch",
+5
+]
+]
+},
+"88": {
+"tag": "tagGDX1Devotion_A101",
+"icon": "tier1-039",
+"star_prefix": "tier1_39",
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk2017",
+"sk2018",
+"sk2016",
+"sk2019"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Order",
+2
+],
+[
+"Primordial",
+3
+]
+]
+},
+"102": {
+"tag": "tagGDX2Devotion_A201",
+"icon": "tier1-043",
+"star_prefix": "tier1_43",
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk2563",
+"sk2564",
+"sk2562",
+"sk2565"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"103": {
+"tag": "tagGDX2Devotion_A202",
+"icon": "tier1-044",
+"star_prefix": "tier1_44",
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk2567",
+"sk2568",
+"sk2566",
+"sk2569"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"100": {
+"tag": "tagGDX1Devotion_C104",
+"icon": "tier3-017",
+"star_prefix": "tier3_17",
+"affinity": [
+[
+"Ascendant",
+16
+],
+[
+"Eldritch",
+14
+]
+],
+"stars": [
+"sk2080",
+"sk2081",
+"sk2079",
+"sk2084",
+"sk2082",
+"sk2083"
+],
+"links": [
+1,
+2,
+3,
+4,
+4
+],
+"given": []
+},
+"101": {
+"tag": "tagGDX1Devotion_C105",
+"icon": "tier3-018",
+"star_prefix": "tier3_18",
+"affinity": [
+[
+"Eldritch",
+10
+],
+[
+"Chaos",
+6
+]
+],
+"stars": [
+"sk2086",
+"sk2087",
+"sk2085",
+"sk2090",
+"sk2088",
+"sk2089"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"108": {
+"tag": "tagGDX2Devotion_C201",
+"icon": "tier3-019",
+"star_prefix": "tier3_19",
+"affinity": [
+[
+"Primordial",
+18
+],
+[
+"Eldritch",
+10
+]
+],
+"stars": [
+"sk2591",
+"sk2592",
+"sk2590",
+"sk2595",
+"sk2593",
+"sk2594"
+],
+"links": [
+1,
+2,
+3,
+3,
+3
+],
+"given": []
+},
+"109": {
+"tag": "tagGDX2Devotion_C202",
+"icon": "tier3-020",
+"star_prefix": "tier3_20",
+"affinity": [
+[
+"Ascendant",
+12
+],
+[
+"Primordial",
+8
+]
+],
+"stars": [
+"sk2597",
+"sk2598",
+"sk2596",
+"sk2601",
+"sk2599",
+"sk2600"
+],
+"links": [
+1,
+2,
+3,
+4,
+3
+],
+"given": []
+},
+"106": {
+"tag": "tagGDX2Devotion_B201",
+"icon": "tier2-037",
+"star_prefix": "tier2_37",
+"affinity": [
+[
+"Ascendant",
+8
+],
+[
+"Primordial",
+6
+]
+],
+"stars": [
+"sk2579",
+"sk2580",
+"sk2578",
+"sk2583",
+"sk2581",
+"sk2582"
+],
+"links": [
+1,
+2,
+3,
+2,
+2
+],
+"given": [
+[
+"Eldritch",
+2
+],
+[
+"Ascendant",
+2
+]
+]
+},
+"107": {
+"tag": "tagGDX2Devotion_B202",
+"icon": "tier2-038",
+"star_prefix": "tier2_38",
+"affinity": [
+[
+"Eldritch",
+8
+],
+[
+"Ascendant",
+6
+]
+],
+"stars": [
+"sk2585",
+"sk2586",
+"sk2584",
+"sk2589",
+"sk2587",
+"sk2588"
+],
+"links": [
+1,
+2,
+3,
+4,
+3
+],
+"given": [
+[
+"Ascendant",
+2
+],
+[
+"Primordial",
+2
+]
+]
+},
+"104": {
+"tag": "tagGDX2Devotion_A203",
+"icon": "tier1-045",
+"star_prefix": "tier1_45",
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk2571",
+"sk2572",
+"sk2570",
+"sk2573"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"105": {
+"tag": "tagGDX2Devotion_A204",
+"icon": "tier1-046",
+"star_prefix": "tier1_46",
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk2575",
+"sk2576",
+"sk2574",
+"sk2577"
+],
+"links": [
+1,
+1,
+1
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"7": {
+"tag": "tagDevotion_A07",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk706",
+"sk707",
+"sk705",
+"sk708"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Primordial",
+5
+]
+]
+},
+"8": {
+"tag": "tagDevotion_A08",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk710",
+"sk711",
+"sk709",
+"sk712",
+"sk713"
+],
+"links": [
+1,
+1,
+3,
+4
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"5": {
+"tag": "tagDevotion_A05",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk696",
+"sk697",
+"sk695",
+"sk698",
+"sk699"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Ascendant",
+5
+]
+]
+},
+"6": {
+"tag": "tagDevotion_A06",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk701",
+"sk702",
+"sk700",
+"sk703",
+"sk704"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Ascendant",
+5
+]
+]
+},
+"92": {
+"tag": "tagGDX1Devotion_B101",
+"icon": "tier2-032",
+"star_prefix": "tier2_32",
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Primordial",
+6
+]
+],
+"stars": [
+"sk2033",
+"sk2034",
+"sk2032",
+"sk2037",
+"sk2035",
+"sk2036"
+],
+"links": [
+1,
+2,
+3,
+4,
+4
+],
+"given": [
+[
+"Eldritch",
+2
+],
+[
+"Chaos",
+2
+]
+]
+},
+"93": {
+"tag": "tagGDX1Devotion_B102",
+"icon": "tier2-033",
+"star_prefix": "tier2_33",
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Order",
+3
+]
+],
+"stars": [
+"sk2039",
+"sk2040",
+"sk2038",
+"sk2043",
+"sk2041",
+"sk2042"
+],
+"links": [
+1,
+2,
+3,
+2,
+5
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"9": {
+"tag": "tagDevotion_A09",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk715",
+"sk716",
+"sk714",
+"sk717",
+"sk718"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Ascendant",
+3
+]
+]
+},
+"90": {
+"tag": "tagGDX1Devotion_A103",
+"icon": "tier1-041",
+"star_prefix": "tier1_41",
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk2025",
+"sk2026",
+"sk2024",
+"sk2027"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Ascendant",
+3
+]
+]
+},
+"91": {
+"tag": "tagGDX1Devotion_A104",
+"icon": "tier1-042",
+"star_prefix": "tier1_42",
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk2029",
+"sk2030",
+"sk2028",
+"sk2031"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Eldritch",
+3
+]
+]
+},
+"96": {
+"tag": "tagGDX1Devotion_B105",
+"icon": "tier2-036",
+"star_prefix": "tier2_36",
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Ascendant",
+6
+]
+],
+"stars": [
+"sk2056",
+"sk2057",
+"sk2055",
+"sk2060",
+"sk2058",
+"sk2059"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": [
+[
+"Primordial",
+2
+],
+[
+"Order",
+2
+]
+]
+},
+"97": {
+"tag": "tagGDX1Devotion_C101",
+"icon": "tier3-014",
+"star_prefix": "tier3_14",
+"affinity": [
+[
+"Chaos",
+6
+],
+[
+"Eldritch",
+10
+]
+],
+"stars": [
+"sk2062",
+"sk2063",
+"sk2061",
+"sk2066",
+"sk2064",
+"sk2065"
+],
+"links": [
+1,
+2,
+2,
+4,
+5
+],
+"given": []
+},
+"94": {
+"tag": "tagGDX1Devotion_B103",
+"icon": "tier2-034",
+"star_prefix": "tier2_34",
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Primordial",
+6
+]
+],
+"stars": [
+"sk2045",
+"sk2046",
+"sk2044",
+"sk2047",
+"sk2048"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+2
+],
+[
+"Ascendant",
+2
+]
+]
+},
+"95": {
+"tag": "tagGDX1Devotion_B104",
+"icon": "tier2-035",
+"star_prefix": "tier2_35",
+"affinity": [
+[
+"Ascendant",
+6
+],
+[
+"Order",
+3
+]
+],
+"stars": [
+"sk2050",
+"sk2051",
+"sk2049",
+"sk2054",
+"sk2052",
+"sk2053"
+],
+"links": [
+1,
+2,
+3,
+4,
+3
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"98": {
+"tag": "tagGDX1Devotion_C102",
+"icon": "tier3-015",
+"star_prefix": "tier3_15",
+"affinity": [
+[
+"Order",
+10
+],
+[
+"Primordial",
+15
+]
+],
+"stars": [
+"sk2068",
+"sk2069",
+"sk2067",
+"sk2072",
+"sk2070",
+"sk2071"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"99": {
+"tag": "tagGDX1Devotion_C103",
+"icon": "tier3-016",
+"star_prefix": "tier3_16",
+"affinity": [
+[
+"Primordial",
+18
+],
+[
+"Ascendant",
+12
+]
+],
+"stars": [
+"sk2074",
+"sk2075",
+"sk2073",
+"sk2078",
+"sk2076",
+"sk2077"
+],
+"links": [
+1,
+2,
+3,
+3,
+5
+],
+"given": []
+},
+"30": {
+"tag": "tagDevotion_A30",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk808",
+"sk809",
+"sk807",
+"sk810"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"31": {
+"tag": "tagDevotion_A31",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk812",
+"sk813",
+"sk811",
+"sk814",
+"sk815"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Order",
+5
+]
+]
+},
+"34": {
+"tag": "tagDevotion_A34",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk825",
+"sk826",
+"sk824",
+"sk827",
+"sk828"
+],
+"links": [
+1,
+1,
+1,
+1
+],
+"given": [
+[
+"Eldritch",
+6
+]
+]
+},
+"35": {
+"tag": "tagDevotion_A35",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk830",
+"sk831",
+"sk829"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Primordial",
+4
+]
+]
+},
+"32": {
+"tag": "tagDevotion_A32",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk817",
+"sk818",
+"sk816",
+"sk819",
+"sk820"
+],
+"links": [
+1,
+2,
+2,
+2
+],
+"given": [
+[
+"Chaos",
+5
+]
+]
+},
+"33": {
+"tag": "tagDevotion_A33",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk822",
+"sk823",
+"sk821"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Primordial",
+4
+]
+]
+},
+"38": {
+"tag": "tagDevotion_B03",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Chaos",
+4
+]
+],
+"stars": [
+"sk853",
+"sk854",
+"sk852",
+"sk857",
+"sk855",
+"sk856"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": [
+[
+"Chaos",
+2
+]
+]
+},
+"39": {
+"tag": "tagDevotion_B04",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+4
+],
+[
+"Eldritch",
+4
+]
+],
+"stars": [
+"sk859",
+"sk860",
+"sk858",
+"sk863",
+"sk864",
+"sk861",
+"sk862"
+],
+"links": [
+1,
+5,
+2,
+3,
+3,
+5
+],
+"given": [
+[
+"Eldritch",
+1
+],
+[
+"Ascendant",
+1
+]
+]
+},
+"36": {
+"tag": "tagDevotion_B01",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Ascendant",
+4
+]
+],
+"stars": [
+"sk842",
+"sk843",
+"sk841",
+"sk844",
+"sk845"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+1
+],
+[
+"Ascendant",
+1
+]
+]
+},
+"37": {
+"tag": "tagDevotion_B02",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+8
+]
+],
+"stars": [
+"sk847",
+"sk848",
+"sk846",
+"sk851",
+"sk849",
+"sk850"
+],
+"links": [
+1,
+2,
+3,
+2,
+5
+],
+"given": [
+[
+"Order",
+2
+]
+]
+},
+"41": {
+"tag": "tagDevotion_B06",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk872",
+"sk873",
+"sk871",
+"sk876",
+"sk877",
+"sk874",
+"sk875"
+],
+"links": [
+1,
+6,
+2,
+2,
+4,
+4
+],
+"given": [
+[
+"Ascendant",
+1
+],
+[
+"Order",
+1
+]
+]
+},
+"42": {
+"tag": "tagDevotion_B07",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+10
+]
+],
+"stars": [
+"sk879",
+"sk880",
+"sk878",
+"sk883",
+"sk884",
+"sk881",
+"sk882"
+],
+"links": [
+1,
+6,
+2,
+3,
+3,
+3
+],
+"given": [
+[
+"Eldritch",
+3
+]
+]
+},
+"40": {
+"tag": "tagDevotion_B05",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+5
+],
+[
+"Primordial",
+5
+]
+],
+"stars": [
+"sk866",
+"sk867",
+"sk865",
+"sk870",
+"sk868",
+"sk869"
+],
+"links": [
+1,
+2,
+3,
+4,
+4
+],
+"given": [
+[
+"Primordial",
+1
+],
+[
+"Ascendant",
+1
+]
+]
+},
+"45": {
+"tag": "tagDevotion_B10",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+8
+]
+],
+"stars": [
+"sk899",
+"sk900",
+"sk898",
+"sk903",
+"sk901",
+"sk902"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": [
+[
+"Primordial",
+1
+],
+[
+"Chaos",
+1
+]
+]
+},
+"46": {
+"tag": "tagDevotion_B11",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Chaos",
+4
+]
+],
+"stars": [
+"sk905",
+"sk906",
+"sk904",
+"sk907",
+"sk908"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+1
+],
+[
+"Chaos",
+1
+]
+]
+},
+"43": {
+"tag": "tagDevotion_B08",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+4
+],
+[
+"Ascendant",
+4
+]
+],
+"stars": [
+"sk886",
+"sk887",
+"sk885",
+"sk890",
+"sk891",
+"sk888",
+"sk889"
+],
+"links": [
+1,
+5,
+2,
+3,
+3,
+5
+],
+"given": [
+[
+"Ascendant",
+3
+]
+]
+},
+"44": {
+"tag": "tagDevotion_B09",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Primordial",
+4
+]
+],
+"stars": [
+"sk893",
+"sk894",
+"sk892",
+"sk897",
+"sk895",
+"sk896"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": [
+[
+"Primordial",
+3
+]
+]
+},
+"49": {
+"tag": "tagDevotion_B14",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk922",
+"sk923",
+"sk921",
+"sk926",
+"sk927",
+"sk924",
+"sk925"
+],
+"links": [
+1,
+6,
+2,
+2,
+4,
+4
+],
+"given": [
+[
+"Order",
+1
+]
+]
+},
+"47": {
+"tag": "tagDevotion_B12",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Chaos",
+4
+]
+],
+"stars": [
+"sk910",
+"sk911",
+"sk909",
+"sk912",
+"sk913"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+3
+]
+]
+},
+"48": {
+"tag": "tagDevotion_B13",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+5
+],
+[
+"Ascendant",
+5
+]
+],
+"stars": [
+"sk915",
+"sk916",
+"sk914",
+"sk919",
+"sk920",
+"sk917",
+"sk918"
+],
+"links": [
+1,
+6,
+2,
+3,
+4,
+4
+],
+"given": [
+[
+"Eldritch",
+1
+],
+[
+"Primordial",
+1
+]
+]
+},
+"52": {
+"tag": "tagDevotion_B17",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk943",
+"sk944",
+"sk942",
+"sk945",
+"sk946"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Ascendant",
+3
+]
+]
+},
+"53": {
+"tag": "tagDevotion_B18",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+6
+],
+[
+"Chaos",
+4
+]
+],
+"stars": [
+"sk948",
+"sk949",
+"sk947",
+"sk952",
+"sk950",
+"sk951"
+],
+"links": [
+1,
+2,
+3,
+3,
+5
+],
+"given": [
+[
+"Ascendant",
+1
+],
+[
+"Eldritch",
+1
+]
+]
+},
+"50": {
+"tag": "tagDevotion_B15",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Eldritch",
+4
+]
+],
+"stars": [
+"sk929",
+"sk930",
+"sk928",
+"sk933",
+"sk934",
+"sk931",
+"sk932"
+],
+"links": [
+1,
+6,
+2,
+2,
+4,
+2
+],
+"given": [
+[
+"Primordial",
+1
+],
+[
+"Eldritch",
+1
+]
+]
+},
+"51": {
+"tag": "tagDevotion_B16",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+4
+],
+[
+"Ascendant",
+4
+]
+],
+"stars": [
+"sk936",
+"sk937",
+"sk935",
+"sk940",
+"sk941",
+"sk938",
+"sk939"
+],
+"links": [
+1,
+6,
+2,
+3,
+4,
+3
+],
+"given": [
+[
+"Eldritch",
+1
+],
+[
+"Ascendant",
+1
+]
+]
+},
+"56": {
+"tag": "tagDevotion_B21",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+5
+],
+[
+"Eldritch",
+5
+]
+],
+"stars": [
+"sk965",
+"sk966",
+"sk964",
+"sk967",
+"sk968"
+],
+"links": [
+1,
+1,
+1,
+1
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"57": {
+"tag": "tagDevotion_B22",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+5
+],
+[
+"Ascendant",
+3
+]
+],
+"stars": [
+"sk970",
+"sk971",
+"sk969",
+"sk974",
+"sk972",
+"sk973"
+],
+"links": [
+1,
+2,
+2,
+4,
+2
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"54": {
+"tag": "tagDevotion_B19",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+10
+]
+],
+"stars": [
+"sk954",
+"sk955",
+"sk953",
+"sk956",
+"sk957"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"55": {
+"tag": "tagDevotion_B20",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+7
+],
+[
+"Ascendant",
+3
+]
+],
+"stars": [
+"sk959",
+"sk960",
+"sk958",
+"sk963",
+"sk961",
+"sk962"
+],
+"links": [
+1,
+2,
+3,
+2,
+5
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"58": {
+"tag": "tagDevotion_B23",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+10
+]
+],
+"stars": [
+"sk976",
+"sk977",
+"sk975",
+"sk980",
+"sk978",
+"sk979"
+],
+"links": [
+1,
+2,
+2,
+2,
+2
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"59": {
+"tag": "tagDevotion_B24",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk982",
+"sk983",
+"sk981",
+"sk986",
+"sk984",
+"sk985"
+],
+"links": [
+1,
+2,
+3,
+2,
+5
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"60": {
+"tag": "tagDevotion_B25",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+5
+],
+[
+"Eldritch",
+5
+]
+],
+"stars": [
+"sk988",
+"sk989",
+"sk987",
+"sk992",
+"sk990",
+"sk991"
+],
+"links": [
+1,
+2,
+1,
+4,
+1
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"63": {
+"tag": "tagDevotion_B28",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+4
+],
+[
+"Eldritch",
+4
+]
+],
+"stars": [
+"sk1005",
+"sk1006",
+"sk1004",
+"sk1009",
+"sk1007",
+"sk1008"
+],
+"links": [
+1,
+2,
+2,
+2,
+2
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"64": {
+"tag": "tagDevotion_B29",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+5
+],
+[
+"Eldritch",
+5
+]
+],
+"stars": [
+"sk1011",
+"sk1012",
+"sk1010",
+"sk1015",
+"sk1016",
+"sk1013",
+"sk1014"
+],
+"links": [
+1,
+6,
+2,
+3,
+3,
+5
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"61": {
+"tag": "tagDevotion_B26",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+10
+]
+],
+"stars": [
+"sk994",
+"sk995",
+"sk993",
+"sk996",
+"sk997"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"62": {
+"tag": "tagDevotion_B27",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk999",
+"sk1000",
+"sk998",
+"sk1003",
+"sk1001",
+"sk1002"
+],
+"links": [
+1,
+2,
+3,
+2,
+5
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"67": {
+"tag": "tagDevotion_C02",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+8
+],
+[
+"Eldritch",
+18
+]
+],
+"stars": [
+"sk1041",
+"sk1035",
+"sk1036",
+"sk1034",
+"sk1039",
+"sk1040",
+"sk1037",
+"sk1038"
+],
+"links": [
+1,
+6,
+7,
+2,
+3,
+4,
+3
+],
+"given": []
+},
+"68": {
+"tag": "tagDevotion_C03",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+8
+],
+[
+"Primordial",
+18
+]
+],
+"stars": [
+"sk1043",
+"sk1044",
+"sk1042",
+"sk1047",
+"sk1048",
+"sk1045",
+"sk1046"
+],
+"links": [
+1,
+6,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"65": {
+"tag": "tagDevotion_B30",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+6
+],
+[
+"Order",
+4
+]
+],
+"stars": [
+"sk1018",
+"sk1019",
+"sk1017",
+"sk1020",
+"sk1021"
+],
+"links": [
+1,
+2,
+2,
+2
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+},
+"66": {
+"tag": "tagDevotion_C01",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+8
+],
+[
+"Primordial",
+18
+]
+],
+"stars": [
+"sk1029",
+"sk1030",
+"sk1028",
+"sk1033",
+"sk1031",
+"sk1032"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"69": {
+"tag": "tagDevotion_C04",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+20
+],
+[
+"Order",
+7
+]
+],
+"stars": [
+"sk1050",
+"sk1051",
+"sk1049",
+"sk1054",
+"sk1055",
+"sk1052",
+"sk1053"
+],
+"links": [
+1,
+4,
+2,
+3,
+4,
+4
+],
+"given": []
+},
+"70": {
+"tag": "tagDevotion_C05",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+8
+],
+[
+"Primordial",
+15
+]
+],
+"stars": [
+"sk1057",
+"sk1058",
+"sk1056",
+"sk1061",
+"sk1062",
+"sk1059",
+"sk1060"
+],
+"links": [
+1,
+6,
+2,
+1,
+4,
+5
+],
+"given": []
+},
+"71": {
+"tag": "tagDevotion_C06",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+20
+],
+[
+"Chaos",
+7
+]
+],
+"stars": [
+"sk1064",
+"sk1065",
+"sk1063",
+"sk1068",
+"sk1066",
+"sk1067"
+],
+"links": [
+1,
+2,
+3,
+4,
+5
+],
+"given": []
+},
+"12": {
+"tag": "tagDevotion_A12",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk728",
+"sk729",
+"sk727",
+"sk730"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Ascendant",
+5
+]
+]
+},
+"13": {
+"tag": "tagDevotion_A13",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk732",
+"sk733",
+"sk731",
+"sk734"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"10": {
+"tag": "tagDevotion_A10",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk720",
+"sk721",
+"sk719",
+"sk722",
+"sk723"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Ascendant",
+3
+]
+]
+},
+"11": {
+"tag": "tagDevotion_A11",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk725",
+"sk726",
+"sk724"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Primordial",
+5
+]
+]
+},
+"16": {
+"tag": "tagDevotion_A16",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk745",
+"sk746",
+"sk744",
+"sk747"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Ascendant",
+5
+]
+]
+},
+"17": {
+"tag": "tagDevotion_A17",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk749",
+"sk750",
+"sk748",
+"sk751"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"14": {
+"tag": "tagDevotion_A14",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk736",
+"sk737",
+"sk735",
+"sk738"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Primordial",
+5
+]
+]
+},
+"15": {
+"tag": "tagDevotion_A15",
+"icon": "",
+"star_prefix": null,
+"affinity": [],
+"stars": [
+"sk739"
+],
+"links": [],
+"given": [
+[
+"Primordial",
+1
+]
+]
+},
+"18": {
+"tag": "tagDevotion_A18",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk753",
+"sk754",
+"sk752",
+"sk755",
+"sk756"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Primordial",
+5
+]
+]
+},
+"19": {
+"tag": "tagDevotion_A19",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk758",
+"sk759",
+"sk757",
+"sk760",
+"sk761"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Eldritch",
+3
+]
+]
+},
+"20": {
+"tag": "tagDevotion_A20",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk763",
+"sk764",
+"sk762",
+"sk765",
+"sk766"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Eldritch",
+3
+],
+[
+"Chaos",
+2
+]
+]
+},
+"23": {
+"tag": "tagDevotion_A23",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk777",
+"sk778",
+"sk776",
+"sk779"
+],
+"links": [
+1,
+2,
+2
+],
+"given": [
+[
+"Ascendant",
+5
+]
+]
+},
+"24": {
+"tag": "tagDevotion_A24",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk781",
+"sk782",
+"sk780",
+"sk783"
+],
+"links": [
+1,
+2,
+3
+],
+"given": [
+[
+"Eldritch",
+5
+]
+]
+},
+"21": {
+"tag": "tagDevotion_A21",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk768",
+"sk769",
+"sk767",
+"sk770",
+"sk771"
+],
+"links": [
+1,
+2,
+3,
+3
+],
+"given": [
+[
+"Order",
+2
+],
+[
+"Primordial",
+3
+]
+]
+},
+"22": {
+"tag": "tagDevotion_A22",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Primordial",
+1
+]
+],
+"stars": [
+"sk773",
+"sk774",
+"sk772",
+"sk775"
+],
+"links": [
+1,
+1,
+1
+],
+"given": [
+[
+"Ascendant",
+3
+],
+[
+"Primordial",
+3
+]
+]
+},
+"27": {
+"tag": "tagDevotion_A27",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Eldritch",
+1
+]
+],
+"stars": [
+"sk795",
+"sk796",
+"sk794"
+],
+"links": [
+1,
+2
+],
+"given": [
+[
+"Eldritch",
+3
+]
+]
+},
+"28": {
+"tag": "tagDevotion_A28",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Ascendant",
+1
+]
+],
+"stars": [
+"sk798",
+"sk799",
+"sk797",
+"sk800",
+"sk801"
+],
+"links": [
+1,
+2,
+3,
+3
+],
+"given": [
+[
+"Ascendant",
+6
+]
+]
+},
+"25": {
+"tag": "tagDevotion_A25",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Chaos",
+1
+]
+],
+"stars": [
+"sk785",
+"sk786",
+"sk784",
+"sk787",
+"sk788"
+],
+"links": [
+1,
+2,
+2,
+4
+],
+"given": [
+[
+"Chaos",
+3
+]
+]
+},
+"26": {
+"tag": "tagDevotion_A26",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk790",
+"sk791",
+"sk789",
+"sk792",
+"sk793"
+],
+"links": [
+1,
+2,
+3,
+4
+],
+"given": [
+[
+"Order",
+3
+]
+]
+},
+"29": {
+"tag": "tagDevotion_A29",
+"icon": "",
+"star_prefix": null,
+"affinity": [
+[
+"Order",
+1
+]
+],
+"stars": [
+"sk803",
+"sk804",
+"sk802",
+"sk805",
+"sk806"
+],
+"links": [
+1,
+2,
+3,
+3
+],
+"given": [
+[
+"Primordial",
+3
+],
+[
+"Order",
+2
+]
+]
+}
+}

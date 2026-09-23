@@ -1,0 +1,606 @@
+{
+ "physique": [
+  "tagCharAttributeName02",
+  "tagCharAttributeDescription02"
+ ],
+ "cunning": [
+  "tagCharAttributeName01",
+  "tagCharAttributeDescription01"
+ ],
+ "spirit": [
+  "tagCharAttributeName03",
+  "tagCharAttributeDescription03"
+ ],
+ "health": [
+  "tagCharAttributeName04",
+  "tagCharAttributeDescription04"
+ ],
+ "energy": [
+  "tagCharAttributeName05",
+  "tagCharAttributeDescription05"
+ ],
+ "oa": [
+  "tagCharStatsOA",
+  "tagCharStatsOADescription"
+ ],
+ "da": [
+  "tagCharStatsDA",
+  "tagCharStatsDADescription"
+ ],
+ "dps": [
+  "tagCharStatsDPS",
+  "tagCharStatsDPSDescription"
+ ],
+ "ar": [
+  "tagCharStatsArmorTotalAlert",
+  "tagCharStatsArmorTotalDescription"
+ ],
+ "damagePerAttack": [
+  "tagCharStatsDPSWeapon",
+  "tagCharStatsDPSLeftDescription"
+ ],
+ "weaponDamage": [
+  "tagCharStatsAvgDmg",
+  "tagCharStatsAvgDmgDescription"
+ ],
+ "aps": [
+  "tagCharStatsAttacksPerSecond",
+  "tagCharStatsAttacksPerSecondInfoo"
+ ],
+ "attackSpeed": [
+  "tagCharStatsAttackSpeed",
+  "tagCharStatsAttackSpeedDescription"
+ ],
+ "critDamage": [
+  "tagCharStatsCritDmg",
+  "tagCharStatsCritDmgInfo"
+ ],
+ "runSpeed": [
+  "tagCharStatsRunSpeed",
+  "tagCharStatsRunSpeedInfo"
+ ],
+ "healingIncrease": [
+  "tagCharStatsHealIncrease",
+  "tagCharStatsHealIncreaseInfo"
+ ],
+ "healthRegen": [
+  "tagCharStatsLifeRegen",
+  "tagCharStatsLifeRegenInfo"
+ ],
+ "energyRegen": [
+  "tagCharStatsEnergyRegen",
+  "tagCharStatsEnergyRegenInfo"
+ ],
+ "energyAbsorption": [
+  "tagCharStatsEnergyAbsorption",
+  "tagCharStatsEnergyAbsorptionInfo"
+ ],
+ "constitutionBonus": [
+  "tagCharStatsConstitution",
+  "tagCharStatsConstitutionInfo"
+ ],
+ "experienceBonus": [
+  "tagCharStatsExpGainedBonus",
+  "tagCharStatsExpGainedBonusInfo"
+ ],
+ "lightRadius": [
+  "tagCharStatsLightRadiusBonus",
+  "tagCharStatsLightRadiusBonusInfo"
+ ],
+ "masteryAll": [
+  "tagCharStatsAllSkillsBonus",
+  "tagCharStatsAllSkillsBonusInfo"
+ ],
+ "masterySoldier": [
+  "tagCharStatsSoldierSkillsBonus",
+  "tagCharStatsSoldierSkillsBonusInfo"
+ ],
+ "masteryDemolitionist": [
+  "tagCharStatsDemoSkillsBonus",
+  "tagCharStatsDemoSkillsBonusInfo"
+ ],
+ "masteryOccultist": [
+  "tagCharStatsOccuSkillsBonus",
+  "tagCharStatsOccuSkillsBonusInfo"
+ ],
+ "masteryNightblade": [
+  "tagCharStatsNightbladeSkillsBonus",
+  "tagCharStatsNightbladeSkillsBonusInfo"
+ ],
+ "masteryArcanist": [
+  "tagCharStatsArcanistSkillsBonus",
+  "tagCharStatsArcanistSkillsBonusInfo"
+ ],
+ "masteryShaman": [
+  "tagCharStatsShamanSkillsBonus",
+  "tagCharStatsShamanSkillsBonusInfo"
+ ],
+ "masteryInquisitor": [
+  "tagCharStatsInquisitorSkillsBonus",
+  "tagCharStatsInquisitorSkillsBonusInfo"
+ ],
+ "masteryNecro": [
+  "tagCharStatsNecroSkillsBonus",
+  "tagCharStatsNecroSkillsBonusInfo"
+ ],
+ "masteryOathkeeper": [
+  "tagCharStatsOathkeeperSkillsBonus",
+  "tagCharStatsOathkeeperSkillsBonusInfo"
+ ],
+ "masteryBerserker": [
+  "tagCharStatsBerserkerSkillsBonus",
+  "tagCharStatsBerserkerSkillsBonusInfo"
+ ],
+ "damageLifeLeech": [
+  "tagCharStatsDamageToHealth",
+  "tagCharStatsDamageToHealthInfo"
+ ],
+ "castSpeed": [
+  "tagCharStatsCastSpeed",
+  "tagCharStatsCastSpeedInfo"
+ ],
+ "cooldownReduction": [
+  "tagCharStatsCooldownReduction",
+  "tagCharStatsCooldownReductionInfo"
+ ],
+ "energyCostReduction": [
+  "tagCharStatsManaCostReduction",
+  "tagCharStatsManaCostReductionInfo"
+ ],
+ "healthDamage": [
+  "tagCharStatsPercentHealthDamage",
+  "tagCharStatsPercentHealthDamageInfo"
+ ],
+ "petsHealth": [
+  "tagCharStatsPetHealth",
+  "tagCharStatsPetHealthInfo"
+ ],
+ "petsDamage": [
+  "tagCharStatsPetDamage",
+  "tagCharStatsPetDamageInfo"
+ ],
+ "petsAttackSpeed": [
+  "tagCharStatsPetAttackSpeed",
+  "tagCharStatsPetAttackSpeedInfo"
+ ],
+ "petsCastSpeed": [
+  "tagCharStatsPetCastSpeed",
+  "tagCharStatsPetCastSpeednfo"
+ ],
+ "petsRunSpeed": [
+  "tagCharStatsPetRunSpeed",
+  "tagCharStatsPetRunSpeednfo"
+ ],
+ "petsCritDamage": [
+  "tagCharStatsCritDmg",
+  ""
+ ],
+ "petResPhysical": [
+  "tagCharStatsPetPhysicalResist",
+  "tagCharStatsPetPhysicalResistInfo"
+ ],
+ "petsOA": [
+  "tagCharStatsPetOA",
+  "tagCharStatsPetOAInfo"
+ ],
+ "petsDA": [
+  "tagCharStatsPetDA",
+  "tagCharStatsPetDAInfo"
+ ],
+ "blockChance": [
+  "tagCharStatsBlockChance",
+  "tagCharStatsBlockChanceDescription"
+ ],
+ "blockAmount": [
+  "tagCharStatsBlockAmount",
+  "tagCharStatsBlockAmountDescription"
+ ],
+ "blockRecovery": [
+  "tagCharStatsBlockRecovery",
+  "tagCharStatsBlockRecoveryInfo"
+ ],
+ "dodgeChance": [
+  "tagCharStatsDodgeChance",
+  "tagCharStatsDodgeChanceInfo"
+ ],
+ "deflectChance": [
+  "tagCharStatsProjDeflectChance",
+  "tagCharStatsProjDeflectChanceInfo"
+ ],
+ "reflect": [
+  "tagCharStatsDamageReflect",
+  "tagCharStatsDamageReflectInfo"
+ ],
+ "lifeReflect": [
+  "tagCharStatsCurrentLifeReflect",
+  "tagCharStatsCurrentLifeReflectInfo"
+ ],
+ "avgItemLevel": [
+  "tagCharStatsItemLevel",
+  "tagCharStatsItemLevelInfo"
+ ],
+ "damagePhysical": [
+  "tagCharStatsPhysicalAbsDmg",
+  "tagCharStatsPhysicalAbsDmgInfo"
+ ],
+ "damagePhysicalModifier": [
+  "tagCharStatsPhysicalPercentDmg",
+  "tagCharStatsPhysicalPercentDmgInfo"
+ ],
+ "damagePierce": [
+  "tagCharStatsPierceAbsDmg",
+  "tagCharStatsPierceAbsDmgInfo"
+ ],
+ "damagePierceModifier": [
+  "tagCharStatsPiercePercentDmg",
+  "tagCharStatsPiercePercentDmgInfo"
+ ],
+ "damageFire": [
+  "tagCharStatsFireAbsDmg",
+  "tagCharStatsFireAbsDmgInfo"
+ ],
+ "damageFireModifier": [
+  "tagCharStatsFirePercentDmg",
+  "tagCharStatsFirePercentDmgInfo"
+ ],
+ "damageCold": [
+  "tagCharStatsColdAbsDmg",
+  "tagCharStatsColdAbsDmgInfo"
+ ],
+ "damageColdModifier": [
+  "tagCharStatsColdPercentDmg",
+  "tagCharStatsColdPercentDmgInfo"
+ ],
+ "damageLightning": [
+  "tagCharStatsLightningAbsDmg",
+  "tagCharStatsLightningAbsDmgInfo"
+ ],
+ "damageLightningModifier": [
+  "tagCharStatsLightningPercentDmg",
+  "tagCharStatsLightningPercentDmgInfo"
+ ],
+ "damagePoison": [
+  "tagCharStatsAcidAbsDmg",
+  "tagCharStatsAcidAbsDmgInfo"
+ ],
+ "damagePoisonModifier": [
+  "tagCharStatsAcidPercentDmg",
+  "tagCharStatsAcidPercentDmgInfo"
+ ],
+ "damageLife": [
+  "tagCharStatsVitalityAbsDmg",
+  "tagCharStatsVitalityAbsDmgInfo"
+ ],
+ "damageLifeModifier": [
+  "tagCharStatsVitalityPercentDmg",
+  "tagCharStatsVitalityPercentDmgInfo"
+ ],
+ "damageAether": [
+  "tagCharStatsAetherAbsDmg",
+  "tagCharStatsAetherAbsDmgInfo"
+ ],
+ "damageAetherModifier": [
+  "tagCharStatsAetherPercentDmg",
+  "tagCharStatsAetherPercentDmgInfo"
+ ],
+ "damageChaos": [
+  "tagCharStatsChaosAbsDmg",
+  "tagCharStatsChaosAbsDmgInfo"
+ ],
+ "damageChaosModifier": [
+  "tagCharStatsChaosPercentDmg",
+  "tagCharStatsChaosPercentDmgInfo"
+ ],
+ "damageSlowBleeding": [
+  "tagCharStatsBleedAbsDmg",
+  "tagCharStatsBleedAbsDmgInfo"
+ ],
+ "damageSlowBleedingModifier": [
+  "tagCharStatsBleedPercentDmg",
+  "tagCharStatsBleedPercentDmgInfo"
+ ],
+ "damageSlowBleedingDuration": [
+  "tagCharStatsBleedDuration",
+  "tagCharStatsBleedDurationInfo"
+ ],
+ "damageSlowPhysical": [
+  "tagCharStatsInternalTraumaAbsDmg",
+  "tagCharStatsInternalTraumaAbsDmgInfo"
+ ],
+ "damageSlowPhysicalModifier": [
+  "tagCharStatsInternalTraumaPercentDmg",
+  "tagCharStatsInternalTraumaPercentDmgInfo"
+ ],
+ "damageSlowPhysicalDuration": [
+  "tagCharStatsInternalTraumaDuration",
+  "tagCharStatsInternalTraumaDurationInfo"
+ ],
+ "damageSlowFire": [
+  "tagCharStatsBurnAbsDmg",
+  "tagCharStatsBurnAbsDmgInfo"
+ ],
+ "damageSlowFireModifier": [
+  "tagCharStatsBurnPercentDmg",
+  "tagCharStatsBurnPercentDmgInfo"
+ ],
+ "damageSlowFireDuration": [
+  "tagCharStatsBurnDuration",
+  "tagCharStatsBurnDurationInfo"
+ ],
+ "damageSlowCold": [
+  "tagCharStatsColdburnAbsDmg",
+  "tagCharStatsColdburnAbsDmgInfo"
+ ],
+ "damageSlowColdModifier": [
+  "tagCharStatsColdburnPercentDmg",
+  "tagCharStatsColdburnPercentDmgInfo"
+ ],
+ "damageSlowColdDuration": [
+  "tagCharStatsColdburnDuration",
+  "tagCharStatsColdburnDurationInfo"
+ ],
+ "damageSlowLightning": [
+  "tagCharStatsElectrocuteAbsDmg",
+  "tagCharStatsElectrocuteAbsDmgInfo"
+ ],
+ "damageSlowLightningModifier": [
+  "tagCharStatsElectrocutePercentDmg",
+  "tagCharStatsElectrocutePercentDmgInfo"
+ ],
+ "damageSlowLightningDuration": [
+  "tagCharStatsElectrocuteDuration",
+  "tagCharStatsElectrocuteDurationInfo"
+ ],
+ "damageSlowPoison": [
+  "tagCharStatsPoisonAbsDmg",
+  "tagCharStatsPoisonAbsDmgInfo"
+ ],
+ "damageSlowPoisonModifier": [
+  "tagCharStatsPoisonPercentDmg",
+  "tagCharStatsPoisonPercentDmgInfo"
+ ],
+ "damageSlowPoisonDuration": [
+  "tagCharStatsPoisonDuration",
+  "tagCharStatsPoisonDurationInfo"
+ ],
+ "damageSlowLife": [
+  "tagCharStatsVitalityDecayAbsDmg",
+  "tagCharStatsVitalityDecayAbsDmgInfo"
+ ],
+ "damageSlowLifeModifier": [
+  "tagCharStatsVitalityDecayPercentDmg",
+  "tagCharStatsVitalityDecayPercentDmgInfo"
+ ],
+ "damageSlowLifeDuration": [
+  "tagCharStatsVitalityDecayDuration",
+  "tagCharStatsVitalityDecayDurationInfo"
+ ],
+ "retalPhysical": [
+  "tagCharStatsPhysicalRet",
+  "tagCharStatsPhysicalRetInfo"
+ ],
+ "retalPhysicalModifier": [
+  "tagCharStatsPhysicalPercentRet",
+  "tagCharStatsPhysicalPercentRetInfo"
+ ],
+ "retalPierce": [
+  "tagCharStatsPierceRet",
+  "tagCharStatsPierceRetInfo"
+ ],
+ "retalPierceModifier": [
+  "tagCharStatsPiercePercentRet",
+  "tagCharStatsPiercePercentRetInfo"
+ ],
+ "retalSlowBleeding": [
+  "tagCharStatsBleedRet",
+  "tagCharStatsBleedRetInfo"
+ ],
+ "retalSlowBleedingModifier": [
+  "tagCharStatsBleedPercentRet",
+  "tagCharStatsBleedPercentRetInfo"
+ ],
+ "retalSlowPhysical": [
+  "tagCharStatsInternalTraumaRet",
+  "tagCharStatsInternalTraumaRetInfo"
+ ],
+ "retalSlowPhysicalModifier": [
+  "tagCharStatsInternalTraumaPercentRet",
+  "tagCharStatsInternalTraumaPercentRetInfo"
+ ],
+ "retalFire": [
+  "tagCharStatsFireRet",
+  "tagCharStatsFireRetInfo"
+ ],
+ "retalFireModifier": [
+  "tagCharStatsFirePercentRet",
+  "tagCharStatsFirePercentRetInfo"
+ ],
+ "retalCold": [
+  "tagCharStatsColdRet",
+  "tagCharStatsColdRetInfo"
+ ],
+ "retalColdModifier": [
+  "tagCharStatsColdPercentRet",
+  "tagCharStatsColdPercentRetInfo"
+ ],
+ "retalLightning": [
+  "tagCharStatsLightningRet",
+  "tagCharStatsLightningRetInfo"
+ ],
+ "retalLightningModifier": [
+  "tagCharStatsLightningPercentRet",
+  "tagCharStatsLightningPercentRetInfo"
+ ],
+ "retalPoison": [
+  "tagCharStatsAcidRet",
+  "tagCharStatsAcidRetInfo"
+ ],
+ "retalPoisonModifier": [
+  "tagCharStatsAcidPercentRet",
+  "tagCharStatsAcidPercentRetInfo"
+ ],
+ "retalLife": [
+  "tagCharStatsVitalityRet",
+  "tagCharStatsVitalityRetInfo"
+ ],
+ "retalLifeModifier": [
+  "tagCharStatsVitalityPercentRet",
+  "tagCharStatsVitalityPercentRetInfo"
+ ],
+ "retalAether": [
+  "tagCharStatsAetherRet",
+  "tagCharStatsAetherRetInfo"
+ ],
+ "retalAetherModifier": [
+  "tagCharStatsAetherPercentRet",
+  "tagCharStatsAetherPercentRetInfo"
+ ],
+ "retalChaos": [
+  "tagCharStatsChaosRet",
+  "tagCharStatsChaosRetInfo"
+ ],
+ "retalChaosModifier": [
+  "tagCharStatsChaosPercentRet",
+  "tagCharStatsChaosPercentRetInfo"
+ ],
+ "retalSlowFire": [
+  "tagCharStatsBurnRet",
+  "tagCharStatsBurnRetInfo"
+ ],
+ "retalSlowFireModifier": [
+  "tagCharStatsBurnPercentRet",
+  "tagCharStatsBurnPercentRetInfo"
+ ],
+ "retalSlowCold": [
+  "tagCharStatsColdburnRet",
+  "tagCharStatsColdburnRetInfo"
+ ],
+ "retalSlowColdModifier": [
+  "tagCharStatsColdburnPercentRet",
+  "tagCharStatsColdburnPercentRetInfo"
+ ],
+ "retalSlowLightning": [
+  "tagCharStatsElectrocuteRet",
+  "tagCharStatsElectrocuteRetInfo"
+ ],
+ "retalSlowLightningModifier": [
+  "tagCharStatsElectrocutePercentRet",
+  "tagCharStatsElectrocutePercentRetInfo"
+ ],
+ "retalSlowPoison": [
+  "tagCharStatsPoisonRet",
+  "tagCharStatsPoisonRetInfo"
+ ],
+ "retalSlowPoisonModifier": [
+  "tagCharStatsPoisonPercentRet",
+  "tagCharStatsPoisonPercentRetInfo"
+ ],
+ "retalSlowLife": [
+  "tagCharStatsVitalityDecayRet",
+  "tagCharStatsVitalityDecayRetInfo"
+ ],
+ "retalSlowLifeModifier": [
+  "tagCharStatsVitalityDecayPercentRet",
+  "tagCharStatsVitalityDecayPercentRetInfo"
+ ],
+ "resStun": [
+  "tagCharStatsStunResist",
+  "tagCharStatsStunResistInfo"
+ ],
+ "resDisruption": [
+  "tagCharStatsDisruptionResist",
+  "tagCharStatsDisruptionResistInfo"
+ ],
+ "resSlowLifeLeach": [
+  "tagCharStatsLifeLeechResist",
+  "tagCharStatsLifeLeechResistInfo"
+ ],
+ "resSlowManaLeach": [
+  "tagCharStatsEnergyLeechResist",
+  "tagCharStatsEnergyLeechResistInfo"
+ ],
+ "resTrap": [
+  "tagCharStatsTrapResist",
+  "tagCharStatsTrapResistInfo"
+ ],
+ "resPetrify": [
+  "tagCharStatsPetrifyResist",
+  "tagCharStatsPetrifyResistInfo"
+ ],
+ "resFreeze": [
+  "tagCharStatsFreezeResist",
+  "tagCharStatsFreezeResistInfo"
+ ],
+ "resSleep": [
+  "tagCharStatsSleepResist",
+  "tagCharStatsSleepResistInfo"
+ ],
+ "resTotalSpeedResistance": [
+  "tagCharStatsSlowResist",
+  "tagCharStatsSlowResistInfo"
+ ],
+ "resPercentReflectionResistance": [
+  "tagCharStatsReflectResist",
+  "tagCharStatsReflectResistInfo"
+ ],
+ "petResFire": [
+  "tagCharStatsPetFireResist",
+  "tagCharStatsPetFireResistInfo"
+ ],
+ "petResCold": [
+  "tagCharStatsPetColdResist",
+  "tagCharStatsPetColdResistInfo"
+ ],
+ "petResLightning": [
+  "tagCharStatsPetLightningResist",
+  "tagCharStatsPetLightningResistInfo"
+ ],
+ "petResPoison": [
+  "tagCharStatsPetPoisonResist",
+  "tagCharStatsPetPoisonResistInfo"
+ ],
+ "petResPierce": [
+  "tagCharStatsPetPierceResist",
+  "tagCharStatsPetPierceResistInfo"
+ ],
+ "petResBleeding": [
+  "tagCharStatsPetBleedResist",
+  "tagCharStatsPetBleedResistInfo"
+ ],
+ "petResLife": [
+  "tagCharStatsPetVitalityResist",
+  "tagCharStatsPetVitalityResistInfo"
+ ],
+ "petResAether": [
+  "tagCharStatsPetAetherResist",
+  "tagCharStatsPetAetherResistInfo"
+ ],
+ "petResChaos": [
+  "tagCharStatsPetChaosResist",
+  "tagCharStatsPetChaosResistInfo"
+ ],
+ "petResStun": [
+  "tagCharStatsPetStunResist",
+  "tagCharStatsPetStunResistInfo"
+ ],
+ "petResTrap": [
+  "tagCharStatsPetTrapResist",
+  "tagCharStatsPetTrapResistInfo"
+ ],
+ "petResPetrify": [
+  "tagCharStatsPetPetrifyResist",
+  "tagCharStatsPetPetrifyResistInfo"
+ ],
+ "petResFreeze": [
+  "tagCharStatsPetFreezeResist",
+  "tagCharStatsPetFreezeResistInfo"
+ ],
+ "petResSleep": [
+  "tagCharStatsPetSleepResist",
+  "tagCharStatsPetSleepResistInfo"
+ ],
+ "petResTotalSpeedResistance": [
+  "tagCharStatsPetSlowResist",
+  "tagCharStatsPetSlowResistInfo"
+ ]
+}

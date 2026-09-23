@@ -1,0 +1,167 @@
+{
+ "armor": {
+  "absorption": 70.0,
+  "equation_damage_gt_armor": "(sumProtectionDV * (1 - sumAbsorptionDV)) + (physicalDamageDV - sumProtectionDV)",
+  "equation_damage_le_armor": "physicalDamageDV * (1 - sumAbsorptionDV)",
+  "note": "DLEP 在官方表里拼作 physcialDamageDefenseEquationDLEP（官方拼写如此，勿改）",
+  "region_total": 100.0,
+  "regions": {
+   "arms": 12.0,
+   "feet": 12.0,
+   "head": 15.0,
+   "legs": 20.0,
+   "shoulders": 15.0,
+   "torso": 26.0
+  }
+ },
+ "attr_equations": {
+  "magicalDamageEquation": "magicalDamageDV*((intelligenceDV/215)+1)",
+  "magicalDurationDamageEquation": "magicalDamageDV*((intelligenceDV/200)+1)",
+  "physicalDamageEquation": "(physicalDamageDV*((dexterityDV/245)+1))",
+  "physicalDurationDamageEquation": "(physicalDamageDV*((dexterityDV/215)+1))",
+  "pierceDamageEquation": "pierceDamageDV*((dexterityDV/245)+1)"
+ },
+ "combatformulas": {
+  "combatRegionArmsChance": 12,
+  "combatRegionFeetChance": 12,
+  "combatRegionHeadChance": 15,
+  "combatRegionLegsChance": 20,
+  "combatRegionShouldersChance": 15,
+  "combatRegionTorsoChance": 26,
+  "defensiveAbilityEquation": "(defensiveAbilityDV + (characterLevelDV * 12) + ((strengthDV + bonusDV) *0.5)) * (1 + (defensiveAbilityModifierDV / 100))+53",
+  "magicalDamageEquation": "magicalDamageDV*((intelligenceDV/215)+1)",
+  "magicalDurationDamageEquation": "magicalDamageDV*((intelligenceDV/200)+1)",
+  "meleeBlockEquation": "(blockChanceDV + blockChanceModifierDV)",
+  "normalPTHEquation": "probabilityToHitDV/70",
+  "offensiveAbilityEquation": "(offensiveAbilityDV + (characterLevelDV * 12) + ((dexterityDV + bonusDV) *0.5)) * (1 + (offensiveAbilityModifierDV / 100))+53",
+  "physcialDamageDefenseEquationDLEP": "physicalDamageDV * (1 - sumAbsorptionDV)",
+  "physicalDamageDefenseEquationDGP": "(sumProtectionDV * (1 - sumAbsorptionDV)) + (physicalDamageDV - sumProtectionDV)",
+  "physicalDamageEquation": "(physicalDamageDV*((dexterityDV/245)+1))",
+  "physicalDamagePercentage": "(physicalDamageDV*((dexterityDV/245)+1))",
+  "physicalDurationDamageEquation": "(physicalDamageDV*((dexterityDV/215)+1))",
+  "physicsStrengthEquation": "(2*(damage/(maxLife*.3)))+4",
+  "physicsStrengthMax": 15,
+  "physicsStrengthMin": 7,
+  "pierceDamageEquation": "pierceDamageDV*((dexterityDV/245)+1)",
+  "probabilityToHitEquation": "((((offensiveAbilityDV/((defensiveAbilityDV/3.5)+offensiveAbilityDV))*300)*0.3)+(((((offensiveAbilityDV*3.25)+10000) - (defensiveAbilityDV*3.25))/100)*0.7))-50",
+  "projectileBlockEquation": "(blockChanceDV + blockChanceModifierDV)",
+  "pthDamageModifier1": 1,
+  "pthDamageModifier2": 1.1,
+  "pthDamageModifier3": 1.2,
+  "pthDamageModifier4": 1.3,
+  "pthDamageModifier5": 1.4,
+  "pthDamageModifier6": 1.5,
+  "pthMinimum": 55,
+  "pthThreshold1": 70,
+  "pthThreshold2": 90,
+  "pthThreshold3": 105,
+  "pthThreshold4": 120,
+  "pthThreshold5": 130,
+  "pthThreshold6": 135,
+  "shieldDamageReductionEquationDGB": "damageDV - (shieldDefenseDV * (shieldAbsorptionDV / 100))",
+  "shieldDamageReductionEquationDLEB": "damageDV * ((100 - shieldAbsorptionDV) / 100 )"
+ },
+ "derived": {
+  "attr_equations": {
+   "magicalDamageEquation": "magicalDamageDV*((intelligenceDV/215)+1)",
+   "magicalDurationDamageEquation": "magicalDamageDV*((intelligenceDV/200)+1)",
+   "physicalDamageEquation": "(physicalDamageDV*((dexterityDV/245)+1))",
+   "physicalDurationDamageEquation": "(physicalDamageDV*((dexterityDV/215)+1))",
+   "pierceDamageEquation": "pierceDamageDV*((dexterityDV/245)+1)"
+  },
+  "pth_region_weights_sum": 100.0,
+  "pth_simple_coeff": 43.956043956043956,
+  "pth_simple_form": "315/(DA/OA+3.5) + (OA-DA)/43.9556 + 20"
+ },
+ "dot_duration_pairs": {
+  "Bleeding": {
+   "duration_fields": 519,
+   "min_fields": 517
+  },
+  "Cold": {
+   "duration_fields": 176,
+   "min_fields": 176
+  },
+  "Fire": {
+   "duration_fields": 267,
+   "min_fields": 268
+  },
+  "Life": {
+   "duration_fields": 90,
+   "min_fields": 90
+  },
+  "Lightning": {
+   "duration_fields": 142,
+   "min_fields": 141
+  },
+  "Physical": {
+   "duration_fields": 143,
+   "min_fields": 143
+  },
+  "Poison": {
+   "duration_fields": 270,
+   "min_fields": 268
+  }
+ },
+ "dot_semantics": {
+  "tagCharStatsBleedAbsDmgInfo": "每次武器攻击所造成的3秒内每秒流血伤害值，含加成。",
+  "tagCharStatsColdAbsDmgInfo": "使用武器攻击每一击所造成的冰冷伤害，含加成。",
+  "tagCharStatsElectrocuteAbsDmgInfo": "使用武器攻击每一击所造成的3秒内每秒电击伤害值，含加成。",
+  "tagCharStatsFireAbsDmgInfo": "使用武器攻击每一击所造成的火焰伤害，含加成。",
+  "tagCharStatsPhysicalAbsDmgInfo": "使用武器攻击每一击造成的物理伤害，含加成。",
+  "tagCharStatsPoisonAbsDmgInfo": "使用武器攻击每一击所造成的5秒内每秒毒素伤害值，含加成。"
+ },
+ "engine": {
+  "armorDefensiveAbsorption": 70,
+  "autoCastEquation": "procRate * (1 + (cooldown * 81)/100) * (1 - (attackDuration * 11) / 100)",
+  "milestones": [
+   1,
+   5,
+   10,
+   15,
+   20,
+   25,
+   32,
+   40,
+   50
+  ],
+  "playerAttackSpeedCapMax": 200,
+  "playerDefenseCap": [
+   80,
+   80,
+   80
+  ],
+  "playerRunSpeedCapMax": 135,
+  "playerSpellCastSpeedCapMax": 200,
+  "questAttributePoints": 10,
+  "questSkillPoints": 13
+ },
+ "pth": {
+  "full_damage_threshold": 70,
+  "hit_equation": "((((offensiveAbilityDV/((defensiveAbilityDV/3.5)+offensiveAbilityDV))*300)*0.3)+(((((offensiveAbilityDV*3.25)+10000) - (defensiveAbilityDV*3.25))/100)*0.7))-50",
+  "minimum": 55,
+  "modifiers": [
+   1.0,
+   1.1,
+   1.2,
+   1.3,
+   1.4,
+   1.5
+  ],
+  "normal_equation": "probabilityToHitDV/70",
+  "thresholds": [
+   70,
+   90,
+   105,
+   120,
+   130,
+   135
+  ]
+ },
+ "source": {
+  "extracted_from": "data/cache/itemdb.js :: window.combatformulas / window.engine",
+  "generator": "tools/extract_combatformulas.py",
+  "note": "逐字来自游戏数据库；pth* 键 grimtools calc.js 从未使用，本表是本项目唯一来源",
+  "record": "records/game/combatformulas.dbr"
+ }
+}
